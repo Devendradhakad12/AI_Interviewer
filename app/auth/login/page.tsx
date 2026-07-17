@@ -51,6 +51,7 @@ export default function SignupFormDemo() {
               id="email"
               placeholder="projectmayhem@fc.com"
               type="email"
+              value={"devendradhakad745@gmail.com"}
               required
             />
           </LabelInputContainer>
@@ -60,6 +61,7 @@ export default function SignupFormDemo() {
               id="password"
               placeholder="••••••••"
               type="password"
+              value={"devendradhakad745@gmail.com"}
               required
             />
           </LabelInputContainer>
