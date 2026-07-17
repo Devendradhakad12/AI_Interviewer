@@ -1,4 +1,4 @@
- "use client"
+"use client"
 
 import { useState } from "react"
 import { ChevronLeft, ChevronRight } from "lucide-react"
@@ -38,21 +38,22 @@ export default function RoadmapDashboard({ data, handleDownload, handleGenerateN
       <div className="max-w-6xl mx-auto">
         {/* Header */}
         <div className="mb-12">
-         <div className=" flex justify-between items-center">
-           <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4">{data["title"]}</h1>
-           <div className=" flex gap-2">
-                 <Button className=" cursor-pointer" onClick={handleDownload}>
+          <div className=" flex justify-between items-center">
+            <h1 className="text-4xl md:text-5xl font-bold text-balance mb-4">{data["title"]}</h1>
+            <div className=" flex gap-2">
+              <Button className=" cursor-pointer" onClick={handleDownload}>
                 Download
               </Button>
-              <Button className=" cursor-pointer" onClick={()=>router.push("/chat")}>
+              {/*   <Button className=" cursor-pointer" onClick={()=>router.push("/chat")}>
                 Chat
-              </Button>
-                  <Button className=" cursor-pointer" onClick={()=>{
-               handleGenerateNew()}}>
+              </Button> */}
+              <Button className=" cursor-pointer" onClick={() => {
+                handleGenerateNew()
+              }}>
                 Generate New
               </Button>
-           </div>
-         </div>
+            </div>
+          </div>
           <p className="text-lg text-muted-foreground">{data["1. Job Role Overview"]}</p>
         </div>
 
@@ -93,11 +94,10 @@ export default function RoadmapDashboard({ data, handleDownload, handleGenerateN
                 <button
                   key={monthNum}
                   onClick={() => setSelectedMonth(monthNum)}
-                  className={`p-4 rounded-lg border-2 transition-all text-left ${
-                    selectedMonth === monthNum
+                  className={`p-4 rounded-lg border-2 transition-all text-left ${selectedMonth === monthNum
                       ? "border-primary bg-primary text-gray-700 bg-opacity-10"
                       : "border-border text-gray-200 bg-card hover:border-primary hover:border-opacity-50"
-                  }`}
+                    }`}
                 >
                   <div className="font-semibold  mb-2">Month {monthNum}</div>
                   <div className="text-sm">{monthData.Topics?.[0]}</div>
@@ -120,10 +120,10 @@ export default function RoadmapDashboard({ data, handleDownload, handleGenerateN
         <div className="mt-12 bg-card border border-border rounded-lg p-8">
           <h3 className="text-2xl font-bold mb-6">Pro Tips for Success</h3>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {Object.entries(data["6. Extra Tips"] || {}).map(([key, value]:any) => (
+            {Object.entries(data["6. Extra Tips"] || {}).map(([key, value]: any) => (
               <div key={key} className="flex flex-col gap-3">
                 <h4 className="font-semibold text-accent text-lg">{key}</h4>
-               <p className="text-muted-foreground text-sm leading-relaxed">{value}</p>
+                <p className="text-muted-foreground text-sm leading-relaxed">{value}</p>
               </div>
             ))}
           </div>

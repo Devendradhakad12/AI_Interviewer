@@ -3,20 +3,20 @@
 import SpotlightCard from "@/components/ui/soptlight-card";
 import Link from "next/link";
 import React, { useState } from "react";
-import { 
-  MapPin, 
-  MessageSquare, 
-  ArrowRight, 
-  Eye, 
-  Sparkles, 
-  LayoutDashboard, 
-  BrainCircuit, 
-  FileText, 
-  UploadCloud, 
-  CheckCircle2, 
-  Briefcase, 
-  DollarSign, 
-  XCircle, 
+import {
+  MapPin,
+  MessageSquare,
+  ArrowRight,
+  Eye,
+  Sparkles,
+  LayoutDashboard,
+  BrainCircuit,
+  FileText,
+  UploadCloud,
+  CheckCircle2,
+  Briefcase,
+  DollarSign,
+  XCircle,
   Search,
   ChevronLeft,
   IndianRupee
@@ -28,7 +28,7 @@ import toast from "react-hot-toast";
 
 const ServicesPage = () => {
   const router = useRouter();
-  
+
   // Roadmap logic
   const roadmap = typeof window !== 'undefined' ? window.localStorage.getItem("roadmap") : null;
 
@@ -51,15 +51,6 @@ const ServicesPage = () => {
       href: "/roadmap",
       cta: "Generate Path"
     },
-    {
-      id: "chat",
-      title: "Career Assistant",
-      description: "24/7 access to your personal AI mentor for resume reviews and salary negotiation tips.",
-      icon: MessageSquare,
-      color: "purple",
-      href: "/chat",
-      cta: "Chat with Neura"
-    },
     // {
     //   id: "summarize",
     //   title: "AI Summarizer",
@@ -68,6 +59,15 @@ const ServicesPage = () => {
     //   color: "orange",
     //   href: "/summarize",
     //   cta: "Summarize Now"
+    // },
+    // {
+    //   id: "chat",
+    //   title: "Career Assistant",
+    //   description: "24/7 access to your personal AI mentor for resume reviews and salary negotiation tips.",
+    //   icon: MessageSquare,
+    //   color: "purple",
+    //   href: "/chat",
+    //   cta: "Chat with Neura"
     // },
     {
       id: "jobs",
@@ -89,7 +89,7 @@ const ServicesPage = () => {
       </div>
 
       <div className="relative z-10 flex flex-col items-center px-6 py-32 md:py-48">
-        
+
         <div className="w-full flex flex-col items-center">
           {/* Header */}
           <div className="text-center mb-24 max-w-3xl">
@@ -97,7 +97,7 @@ const ServicesPage = () => {
               Our <span className="text-gradient">Core Services</span>
             </h1>
             <p className="text-slate-400 text-lg md:text-xl leading-relaxed">
-              Every tool you need to transition from "Applying" to "Hired." 
+              Every tool you need to transition from "Applying" to "Hired."
               Engineered with next-generation AI to guarantee professional growth.
             </p>
           </div>
@@ -113,18 +113,18 @@ const ServicesPage = () => {
                 whileHover={{ y: -8 }}
                 className="group h-full"
               >
-                <SpotlightCard 
+                <SpotlightCard
                   className="h-full !bg-slate-900/40 !border-white/5 !rounded-[3rem] p-10 backdrop-blur-3xl flex flex-col relative overflow-hidden group/card transition-all hover:!bg-slate-900/60"
                   spotlightColor={
-                    card.color === 'blue' ? 'rgba(59, 130, 246, 0.15)' : 
-                    card.color === 'emerald' ? 'rgba(16, 185, 129, 0.15)' : 
-                    card.color === 'orange' ? 'rgba(249, 115, 22, 0.15)' : 
-                    card.color === 'cyan' ? 'rgba(6, 182, 212, 0.15)' :
-                    'rgba(168, 85, 247, 0.15)'
+                    card.color === 'blue' ? 'rgba(59, 130, 246, 0.15)' :
+                      card.color === 'emerald' ? 'rgba(16, 185, 129, 0.15)' :
+                        card.color === 'orange' ? 'rgba(249, 115, 22, 0.15)' :
+                          card.color === 'cyan' ? 'rgba(6, 182, 212, 0.15)' :
+                            'rgba(168, 85, 247, 0.15)'
                   }
                 >
                   <div className={`absolute top-0 right-0 w-32 h-32 bg-${card.color}-500/10 blur-3xl rounded-full opacity-0 group-hover/card:opacity-100 transition-opacity`} />
-                  
+
                   <div className="relative z-10 flex flex-col h-full">
                     <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-10 bg-${card.color}-500/10 text-${card.color}-400 group-hover/card:scale-110 transition-transform shadow-inner`}>
                       <card.icon className="w-7 h-7" />
@@ -142,7 +142,7 @@ const ServicesPage = () => {
                       {card.id === "roadmap" ? (
                         <div className="flex flex-col gap-3">
                           {roadmap && (
-                            <Button 
+                            <Button
                               variant="outline"
                               className="w-full h-12 rounded-2xl border-white/10 hover:bg-white/5 font-bold"
                               onClick={() => router.push("/roadmap")}
@@ -150,7 +150,7 @@ const ServicesPage = () => {
                               View Recent Path
                             </Button>
                           )}
-                          <Button 
+                          <Button
                             className={`w-full h-12 rounded-2xl bg-white text-black hover:bg-slate-100 font-bold shadow-xl`}
                             onClick={() => {
                               window.localStorage.removeItem("roadmap");
@@ -161,7 +161,7 @@ const ServicesPage = () => {
                           </Button>
                         </div>
                       ) : (
-                        <Button 
+                        <Button
                           asChild
                           className={`w-full h-14 rounded-[1.5rem] bg-white text-black hover:bg-slate-100 font-bold group/btn shadow-2xl shadow-black/20`}
                         >
@@ -180,7 +180,7 @@ const ServicesPage = () => {
         </div>
 
         {/* Bottom Feature Bar */}
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           className="mt-32 w-full max-w-5xl glass-card rounded-[2.5rem] p-8 md:p-12 text-center"
