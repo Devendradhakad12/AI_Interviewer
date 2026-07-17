@@ -38,7 +38,7 @@ export default function HomePage() {
           </motion.div>
         </section>
 
-        <section className="container mx-auto px-6 py-20">
+     {/*    <section className="container mx-auto px-6 py-20">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               { value: 12400, suffix: "+", label: "Interviews Practiced", icon: <Bot className="h-6 w-6 text-blue-400" /> },
@@ -64,7 +64,7 @@ export default function HomePage() {
               </motion.div>
             ))}
           </div>
-        </section>
+        </section> */}
 
         <AnimatedSection id="features">
           <section className="container mx-auto px-6 py-32">
