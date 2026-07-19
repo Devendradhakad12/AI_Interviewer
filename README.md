@@ -1,4 +1,4 @@
-# 🖱️ NeuraView: The Frontend Interface
+# 🖱️ NeuraView: The AI Interviewer
 
 This is the high-performance Next.js 14 frontend for **NeuraView**, an AI-powered mock interview and career preparation platform. It uses React's modern patterns, cinematic animations (Framer Motion), and sophisticated integrations (Sarvam AI, Face Mesh) to provide a premium user experience.
 
